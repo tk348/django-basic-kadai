@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}商品一覧{% endblock %}
+
+{% block content %}
+<h1>商品一覧</h1>
+
+<a href="{% url 'product_create' %}">新規登録< border="1">
+    <tr>
+        <th>商品名</th>
+        <th>価格</th>
+        <th>編集</th>
+        <th>削除</th>
+    </tr>
+
+    {% for product in object_list %}
+    <tr>
+        <td>
+            {% url 'product_detail' product.pk %}
+                {{ product.name }}
+            </a>
+        </td>
+        <td>{{ product.price }}円</td>
+        <td>
+            <a href="{% url_update' product.pk %}編集</a>
+        </td>
+        <td>
+            <a href="{% url 'product_delete' product.pk %}      </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'top' %}">戻る</a>
+
+ %}

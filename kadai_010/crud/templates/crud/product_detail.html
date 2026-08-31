@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}商品詳細{% endblock %}
+
+{% block content %}
+
+<h1>商品詳細</h1>
+
+<table border="1">
+    <tr>
+        <th>商品名</th>
+        <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+        <th>価格</th>
+        <td>{{ object.price }}円</td>
+    </tr>
+</table>
+
+<p>
+    <a href="{% url 'product_list</a>
+</p>
+
+{% endblock %}
